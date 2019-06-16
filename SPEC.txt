@@ -1,0 +1,7 @@
+PacBio_fasta	/Users/arthur/Desktop/IPEC/data/PacBio.fa
+Illumina_fasta_list	/Users/arthur/Desktop/IPEC/data/NGS_file_list.txt
+Bowtie2_folder	/Users/arthur/Desktop/bowtie2/
+IPEC_folder	/Users/arthur/Desktop/IPEC/scripts/
+Output_folder	output
+Bowtie2_threads	2
+Remove_tmp_files	yes
