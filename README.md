@@ -123,12 +123,12 @@ Comparing the raw and post-corrected sequences using BLAT to rn6.0:
 browser details PacBio.fa     2204     5  3111  3113    91.0%  chr2   +    18392251  18416979  24729
 browser details corrected.fa  2827     5  2840  2842   100.0%  chr2   +    18392251  18416979  24729
 ```
-If you think another iteration is needed, simply use this file as "PacBio_fasta", re-make the <SPEC.txt> file, re-make the "run.sh" and run ipec again.
+
+7. If you think another iteration is needed, simply use this file as "PacBio_fasta", re-make the <SPEC.txt> file, re-make the "run.sh" and run ipec again.
 
 
 ## Contact
-```arthur (dot) yxt (at) gmail (dot) com  ```   
-for bug reporting or requiring additional functionality
+```arthur (dot) yxt (at) gmail (dot) com  ```   for bug reporting or requiring additional functionality
 
 
 ## Citation
