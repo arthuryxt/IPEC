@@ -58,32 +58,44 @@ Expected time: a couple of seconds for the toy example
 
 * __Pacbio_get_fasta.pl__   
   _Description_: Extract fasta files (one for ccs.fa, the other for subread.fa) from SMRT runs with two movies (old, pre-2013)
+  
   _Usage_: perl Pacbio_get_fasta.pl <director_of_SMRT_analysis_result> <serial/lane number> <output_filename>
+  
   _Help_: perl Pacbio_get_fasta.pl
 
 * __Pacbio2_get_fasta.pl__   
   _Description_: Extract fasta files (one for ccs.fa, the other for subread.fa) from SMRT runs with two movies (new, post-2013)
+  
   _Usage_: perl Pacbio2_get_fasta.pl <director_of_SMRT_analysis_result> <serial/lane number> <output_filename>
+  
   _Help_: perl Pacbio2_get_fasta.pl
   
 * __Pacbio_trim_cDNA_primer2.pl__   
-  _Description_: Remove cDNA primers (SMARTer protocol) from the subreads 
+  _Description_: Remove cDNA primers (SMARTer protocol) from the subreads
+  
   _Usage_: perl Pacbio_trim_cDNA_primer2.pl <subread.fa> <AAGCAGTGGTATCAACGCAGAGTAC> <AAGCAGTGGTATCAACGCAGAGTACATGGG> 0.25 300
+  
   _Help_: perl Pacbio_trim_cDNA_primer2.pl
 
 * __Pacbio_seperate_CCS_2.1.pl__   
-  _Description_: Seperate wells with CCS reads with those without CCS reads 
+  _Description_: Seperate wells with CCS reads with those without CCS reads
+  
   _Usage_: perl Pacbio_seperate_CCS_2.1.pl <subread.fa.t15> <reads_of_insert.fasta> <SubRead.fa.t15> <CCS.fa> <mySample_1>
+  
   _Help_: perl Pacbio_seperate_CCS_2.pl
 
 * __gtf2refFlat_gmap.pl__   
-  _Description_: Convert the gtf format into refFlat format 
+  _Description_: Convert the gtf format into refFlat format
+  
   _Usage_: perl gtf2refFlat_gmap.pl <input.gtf> <input.length> <output_refFlat>
+  
   _Help_: perl gtf2refFlat_gmap.pl
 
 * __cluster_refFlat.pl__   
   _Description_: Collapse the PacBio rads and report representative transcript isoforms per gene loci via "clustering" (full-length) pacbio reads, opionally with known exon-junctions from refseq and ensembl annotation, or supporting CAGE data, or requiring at least 2 reads from illumina to support the exon-junctions. The first two arguments are mandatory, the rest can be set to "no" if not available. Note the arguments have to be provided in order as below.
+  
   _Usage_: perl cluster_refFlat.pl <input_refFlat> <output_refFlat.basename> <seqlenth> <strand_info> <coverage> <annotated_junction_bed6_bed12> <Illumina_junction_bed6_bed12> <CAGE_bed6> <min_junction_support> <min_intron_len> <max_intron_len> <min_isof_len> <force_illumina_support>
+  
   _Help_: perl cluster_refFlat.pl
 
 
@@ -93,7 +105,7 @@ It should be a FASTA file, and we refer to "PacBio.fa" in this tutorial.
 
 2. Prepare Fasta files for Illumina reads and create a file list
 As the throughput of NGS grows, using ALL reads in one lane for correction can lead to memory crisis. We can split one big Illumina read file into several smaller ones, perform the correction with the smaller file, and later merge the voting information for a final version.
-Let say, we have split the big Illumina file into 26 smaller ones: <NGSa>, <NGSb>, ..., <NGSz>.
+Let say, we have split the big Illumina file into 26 smaller ones: ```<NGSa>, <NGSb>, ..., <NGSz>```.
 We can create a file list with the following command:
 ```ls -d $PWD/NGS? > NGS_file_list.txt```
 
