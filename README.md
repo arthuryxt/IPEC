@@ -16,7 +16,7 @@ Tookit for Illumina-assisted PacBio Error Correction (IPEC).
 ```git clone https://github.com/arthuryxt/IPEC.git```
 3. Changed to the IPEC directory and run the scripts: 
 ```cd IPEC```
-4. Download Bowtie2 executables if you have them in then system. Supported version 2.3.5.1 (tested) and lower versions.
+4. Download Bowtie2 executables if you don't yet have them. Supported version 2.3.5.1 (tested) and lower versions.
 
 Expected time: a few seconds
 
@@ -28,6 +28,7 @@ Expected time: a few seconds
   2. Mapping Illumina reads to PacBio reads using sensitive local alignment using Bowtie2.
   3. Correctiong PacBio reads using crowd wisdom (voting).
   4. Merge information from partially (NGS-)corrected into fully corrected reads, and report additional stats files.
+  
   _Usage_: perl ipec_MAKE.pl <SPEC.txt> <run.sh> 
 
 
@@ -39,20 +40,13 @@ Expected time: a few seconds
 perl scripts/ipec_MAKE.pl SPEC.txt run.sh   
 ```
 
-* __run.sh __   
+* __run.sh__   
 ```
 bash run.sh 
 ```
 
 Expected time: a couple of seconds for the toy example
 
-## Contact
-```arthur (dot) yxt (at) gmail (dot) com  ```   
-for bug reporting or requiring additional functionality
-
-
-## Citation
-1.  Xi Wang, Xintian You, Jingyi Hou, Julian D. Langer, Fiona Rupprecht, Irena Vlatkovic, Claudia Quedenau, Georgi Tushev, Irina Epstein, Bernhard Schaefke, Wei Sun, Liang Fang, Guipeng Li, Yuhui Hu, Erin M Schuman, Wei Chen. (2019) __Full-length transcriptome reconstruction reveals a large diversity of RNA isoforms and open reading frames in the rat hippocampus__, _under review_. 
 
 
 
@@ -125,8 +119,18 @@ perl -e 'print join("\t","Remove_tmp_files","yes"),"\n";' >> SPEC.txt
 6. RESULT
 <output/Results/corrected.fa> is the corrected fasta
 Comparing the raw and post-corrected sequences using BLAT to rn6.0:
+```
 browser details PacBio.fa     2204     5  3111  3113    91.0%  chr2   +    18392251  18416979  24729
 browser details corrected.fa  2827     5  2840  2842   100.0%  chr2   +    18392251  18416979  24729
+```
 If you think another iteration is needed, simply use this file as "PacBio_fasta", re-make the <SPEC.txt> file, re-make the "run.sh" and run ipec again.
 
+
+## Contact
+```arthur (dot) yxt (at) gmail (dot) com  ```   
+for bug reporting or requiring additional functionality
+
+
+## Citation
+1.  Xi Wang, Xintian You, Jingyi Hou, Julian D. Langer, Fiona Rupprecht, Irena Vlatkovic, Claudia Quedenau, Georgi Tushev, Irina Epstein, Bernhard Schaefke, Wei Sun, Liang Fang, Guipeng Li, Yuhui Hu, Erin M Schuman, Wei Chen. (2019) __Full-length transcriptome reconstruction reveals a large diversity of RNA isoforms and open reading frames in the rat hippocampus__, _under review_. 
 
